@@ -16,3 +16,5 @@ __contact__     = {
                         "University"    :   "UIN SYARIF HIDAYATULLAH JAKARTA"
                     }    
 } 
+
+print(__contact__["Zulfan"])
