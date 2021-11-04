@@ -17,4 +17,23 @@ __contact__     = {
                     }    
 } 
 
-print(__contact__["Zulfan"])
+
+menu = {
+    1:  "Pensil",
+    2:  "Buku",
+    3:  "Bebek"
+}
+
+harga = {
+    1:  1_000,
+    2:  3_500,
+    3:  20_000
+}
+
+def menuKita():
+    print("======== menu ========")
+
+    for i  in range (1, len(menu)+1):
+        print(menu[i] + "\t" + str(harga[i]) )
+
+menuKita()
