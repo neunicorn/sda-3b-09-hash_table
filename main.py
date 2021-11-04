@@ -1,3 +1,5 @@
+import os
+
 #main.py
 #encoding: utf-8
 
@@ -36,4 +38,19 @@ def menuKita():
     for i  in range (1, len(menu)+1):
         print(menu[i] + "\t" + str(harga[i]) )
 
+def run():
+    print("====== WARUNG BAROKAH  =======")
+    print("1. Payment")
+    print("2. history")
+    pilih = str(input("pilih: "))
+
+    if(pilih == "1"):
+        payment()
+    elif(pilih == "2"):
+        history()
+    else:
+        os.system('cls')
+        run()
+        
+run()
 menuKita()
