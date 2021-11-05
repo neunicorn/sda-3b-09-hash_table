@@ -9,7 +9,7 @@ __contact__     = {
                     "Rafif" :{
                         "Name"          :   "Muhammad Rafif Fadlurahman",
                         "Email"         :   "rafif.fadlurahman20@mhs.uinjkt.ac.id",
-                        "University"    :   "UIN SYARI FHIDAYATULLAH JAKARTA"
+                        "University"    :   "UIN SYARIF HIDAYATULLAH JAKARTA"
 
                     },
                     "Zulfan":{
@@ -38,11 +38,26 @@ def menuKita():
     print("+----------------------+")
     for i  in range (1, len(menu)+1):
         print(menu[i] + "\t" + str(harga[i]) )
-
+    
 def payment():
     menuKita()
-    inputMenu = int(input("Input:"))
-    print(menu[inputMenu] + "\t harga: " + str(harga[inputMenu]))
+    total = 0
+    x = True
+    while(x):
+    
+        inputMenu = int(input("Input:"))
+        if (inputMenu == 0):
+            print("Masuk")
+            print("total harga:" + str(total))
+            return total
+        elif (inputMenu > 0):
+            print(menu[inputMenu] + "\t harga: " + str(harga[inputMenu]))
+        total += harga[inputMenu]
+    
+    print("keluar dari looping")
+
+
+    return total
 
 
 
