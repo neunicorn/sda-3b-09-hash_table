@@ -33,24 +33,34 @@ harga = {
 }
 
 def menuKita():
-    print("======== menu ========")
-
+    print("+----------------------+")
+    print("|         menu         |")
+    print("+----------------------+")
     for i  in range (1, len(menu)+1):
         print(menu[i] + "\t" + str(harga[i]) )
+
+def payment():
+    menuKita()
+    inputMenu = int(input("Input:"))
+    print(menu[inputMenu] + "\t harga: " + str(harga[inputMenu]))
+
+
 
 def run():
     print("====== WARUNG BAROKAH  =======")
     print("1. Payment")
     print("2. history")
-    pilih = str(input("pilih: "))
+    print("0. quit")
+    pilih = str(input("input: "))
 
     if(pilih == "1"):
         payment()
     elif(pilih == "2"):
         history()
+    elif(pilih == "0"):
+        quit()
     else:
         os.system('cls')
         run()
         
 run()
-menuKita()
