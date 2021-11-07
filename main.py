@@ -37,27 +37,37 @@ def menuKita():
     print("|         menu         |")
     print("+----------------------+")
     for i  in range (1, len(menu)+1):
-        print(menu[i] + "\t" + str(harga[i]) )
-    
+        print(f"{i}. {menu[i]} \t harga: {harga[i]}")
+    print("0.total")
+
 def payment():
     menuKita()
     total = 0
-    x = True
-    while(x):
-    
+    buffer = 0
+    x = 1
+    while(x==1):
+        quantity = 0
         inputMenu = int(input("Input:"))
         if (inputMenu == 0):
             print("Masuk")
             print("total harga:" + str(total))
-            return total
-        elif (inputMenu > 0):
+            break
+        elif (inputMenu > 0 or inputMenu <= 3):
             print(menu[inputMenu] + "\t harga: " + str(harga[inputMenu]))
-        total += harga[inputMenu]
-    
-    print("keluar dari looping")
+            quantity= int(input("quantity: "))
+            buffer = harga[inputMenu] * quantity
+        else:
+            print("wrong input code!")
 
+        total += buffer
+    
+    print("test")
 
     return total
+
+def bayar():
+    total = payment()
+
 
 
 
