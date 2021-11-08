@@ -67,6 +67,30 @@ def payment():
 
 def bayar():
     total = payment()
+    x = True
+    while x is True:
+        uangAnda = int(input("masukkan uang anda: "))
+        if uangAnda >= total:
+            x = False
+        elif(uangAnda < total):
+            print("Uang anda tidak cukup!")
+    
+    kembalian = total - uangAnda
+    if(kembalian == 0 ):
+        print("Uang anda pas!")
+    elif(kembalian > 0 ):
+        print(f"kembalian anda: {kembalian}")
+    
+    print("\n")
+
+    print("ingin belanja lagi?(y/n)")
+    ulangi = str(input("y untuk ya, dan n untuk tidak: "))
+    if(ulangi == 'y'):
+        bayar()
+    elif(ulangi == 'n'):
+        os.system("cls")
+        run()
+
 
 
 
@@ -79,7 +103,7 @@ def run():
     pilih = str(input("input: "))
 
     if(pilih == "1"):
-        payment()
+        bayar()
     elif(pilih == "2"):
         history()
     elif(pilih == "0"):
